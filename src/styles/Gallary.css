@@ -90,16 +90,34 @@
 /* 📱 Responsive for Tablets */
 @media (max-width: 768px) {
   .carousel-wrapper {
-    height: 280px;
+    height: 300px;
   }
 
   .carousel-image {
     width: 200px;
-    height: 140px;
+    height: 130px;
+    transform: none !important;
+    position: static;
+    margin: 0 auto 20px;
   }
 
-  .btn {
-    font-size: 1rem;
-    padding: 10px 20px;
+  .carousel {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    gap: 20px;
+    justify-content: center;
+    padding-bottom: 10px;
+    transform: none !important;
+    height: auto;
+    perspective: none;
+  }
+
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .btn-container {
+    display: none;
   }
 }
