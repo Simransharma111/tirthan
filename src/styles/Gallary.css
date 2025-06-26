@@ -87,37 +87,55 @@
   transform: scale(1.05);
 }
 
-/* 📱 Responsive for Tablets */
 @media (max-width: 768px) {
-  .carousel-wrapper {
-    height: 300px;
-  }
-
+  .carousel-wrapper,
+  .carousel,
   .carousel-image {
-    width: 200px;
-    height: 130px;
-    transform: none !important;
-    position: static;
-    margin: 0 auto 20px;
-  }
-
-  .carousel {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: scroll;
-    gap: 20px;
-    justify-content: center;
-    padding-bottom: 10px;
-    transform: none !important;
-    height: auto;
-    perspective: none;
-  }
-
-  .carousel::-webkit-scrollbar {
     display: none;
+  }
+
+  .mobile-slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile-image-wrapper {
+    width: 90%;
+    max-width: 340px;
+    height: 220px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+    position: relative;
+    transition: opacity 0.8s ease;
+  }
+
+  .mobile-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .fade-in {
+    animation: fadeIn 0.8s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to   { opacity: 1; transform: scale(1); }
   }
 
   .btn-container {
-    display: none;
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn {
+    padding: 0.4rem 1rem;
+    margin: 0 8px;
+    font-size: 0.95rem;
   }
 }
