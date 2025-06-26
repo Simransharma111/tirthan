@@ -51,8 +51,8 @@ export default function Home() {
           </div>
           <Packages />
 
-          <div id="about"> <About/> </div>
-          <div id="contact"> <Contact/> </div>
+          <div id="about"> <About /> </div>
+          <div id="contact"> <Contact /> </div>
 
           <Footer />
           <FloatingWhatsappButton />
