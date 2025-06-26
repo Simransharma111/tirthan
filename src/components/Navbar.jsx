@@ -1,6 +1,7 @@
 // src/components/NavBar.jsx
 import { useState } from "react";
 import '../styles/Navbar.css'; // ✅ adjust path if needed
+import { Link } from "react-router-dom"; // For internal navigation links
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -23,8 +24,8 @@ export default function Navbar() {
           <li><a href="/">Home</a></li>
           <li><a href="#packages">Packages</a></li>
           <li><a href="#gallary">Gallary</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/contact">Contact</a></li>
+          <li><Link to="/contact">Contact Us</Link></li>
+          <li><Link to="/about">About</Link></li>
         </ul>
       </div>
     </nav>
