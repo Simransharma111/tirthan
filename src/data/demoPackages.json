@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Tirthan Riverside Retreat",
+    "location": "Tirthan Valley, Himachal Pradesh",
+    "price": 12000,
+    "image": "/images/weekend.jpg",
+    "description": "Enjoy a peaceful stay near the Tirthan River with nature walks and bonfire evenings.",
+    "category": "Family"
+  },
+  {
+    "name": "Himalayan Adventure Trek",
+    "location": "Great Himalayan National Park, Tirthan",
+    "price": 18000,
+    "image": "/images/trek.jpg",
+    "description": "Trek through GHNP with experienced guides, ideal for adventure lovers.",
+    "category": "Adventure"
+  },
+  {
+    "name": "Romantic Wooden Cottage",
+    "location": "Jibhi, near Tirthan Valley",
+    "price": 15000,
+    "image": "/images/hotel.jpg",
+    "description": "Perfect for couples: cozy stay with candlelight dinners and valley views.",
+    "category": "Honeymoon"
+  },
+  {
+    "name": "Backpackers Escape",
+    "location": "Shoja, Tirthan Valley",
+    "price": 7000,
+    "image": "/images/yoga.jpg",
+    "description": "Budget stay for solo travelers, includes hiking and group activities.",
+    "category": "Solo"
+  },
+  {
+    "name": "Mountain Adventure",
+    "location": "Tirthan Valley",
+    "description": "Experience the thrill of mountains.",
+    "price": 2999,
+    "discountedPrice": 2499,
+    "offer": "Limited Time Offer: Save ₹500!",
+    "image": "/images/mountain.jpg"
+  },
+  {
+    "name": "River Retreat",
+    "location": "Tirthan Valley",
+    "description": "Stay by the serene riverside.",
+    "price": 3499,
+    "image": "/images/river.jpg"
+  }
+]

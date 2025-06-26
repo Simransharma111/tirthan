@@ -1,0 +1,62 @@
+.booking-page {
+  max-width: 600px;
+  margin: auto;
+  padding: 2rem;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 12px;
+}
+
+.booking-page h2 {
+  margin-bottom: 10px;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #999;
+  margin-right: 8px;
+}
+
+.discounted-price {
+  color: #e91e63;
+  font-weight: bold;
+}
+
+.booking-form input,
+.booking-form textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.booking-form textarea {
+  min-height: 80px;
+}
+
+.whatsapp-btn {
+  background-color: #25D366;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+  width: 100%;
+}
+
+.payment-section {
+  margin-top: 30px;
+  padding: 1rem;
+  background-color: #f0f8ff;
+  border-radius: 10px;
+}
+
+.upi-qr {
+  margin-top: 15px;
+  max-width: 200px;
+  width: 100%;
+  display: block;
+}

@@ -1,0 +1,79 @@
+.tent-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #1a1a1a;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+/* Video that shows after clicking escape */
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Tent flaps */
+.tent {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to bottom, #4b3d2a, #2c1e12);
+  z-index: 2;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.6);
+}
+
+.tent-left {
+  left: 0;
+  border-right: 1px solid #222;
+}
+
+.tent-right {
+  right: 0;
+  border-left: 1px solid #222;
+}
+
+/* Center text and button */
+.tent-content {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fffbe7;
+  text-align: center;
+  max-width: 80%;
+}
+
+.tent-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.tent-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.tent-content button {
+  background-color: #fbbf24;
+  color: #000;
+  border: none;
+  padding: 0.8rem 1.6rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.tent-content button:hover {
+  background-color: #f59e0b;
+}

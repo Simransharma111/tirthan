@@ -1,0 +1,137 @@
+.about-section {
+  padding: 5rem 1rem;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(to right,#b2dfdb, #134046);
+
+}
+
+.about-container {
+  max-width: 1200px;
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+.about-container.reverse {
+  flex-direction: row-reverse;
+}
+
+.about-left,
+.about-right {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-img {
+  width: 100%;
+  max-width: 360px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.about-img.large {
+  border-radius: 12px;
+}
+
+.about-img.circle {
+  border-radius: 50%;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  border: 6px solid #e0f2f1;
+}
+
+.about-right h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #c5cfce;
+}
+
+.about-right p {
+  font-size: 1.125rem;
+  color: #e7e3e3;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+/* Themed sections */
+.company-section {
+   background: linear-gradient(to right,#b2dfdb, #134046);
+
+}
+
+.owner-section .about-right h2 {
+  color: #2d3748; /* dark gray for better contrast */
+}
+
+.owner-section .about-right p {
+  color: #4a5568; /* medium-dark gray */
+}
+
+.enhanced-dev-section {
+   background: linear-gradient(to right,#b2dfdb, #134046);
+  padding: 2rem 1rem;
+  text-align: center;
+  border-top: 1px solid #ccc;
+}
+
+.dev-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.dev-credit {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.dev-link {
+  color: #b9c6c5;
+  font-weight: 600;
+  text-decoration: underline dotted;
+}
+
+.dev-link:hover {
+  text-decoration: underline solid;
+  color: #115e59;
+}
+
+.dev-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.dev-button {
+  padding: 0.5rem 1.25rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.dev-button.email {
+  background-color: #0ea5e9;
+  color: #fff;
+}
+
+.dev-button.whatsapp {
+  background-color: #22c55e;
+  color: #fff;
+}
+
+.dev-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
