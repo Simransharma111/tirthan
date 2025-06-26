@@ -10,6 +10,8 @@ import Footer from '../components/Footer';
 import EscapeScreen from '../components/EscapeScreen';
 import Hero from '../components/Hero';
 import FloatingWhatsappButton from '../components/FloatingWhatsappButton';
+import About from '../pages/About';
+import Contact from '../pages/Contact';
 
 export default function Home() {
   const isPageRefresh =
