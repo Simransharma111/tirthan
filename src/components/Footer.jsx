@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import '../styles/Footer.css'; // External CSS styling
+import { Link } from 'react-router-dom'; // For internal navigation links
 
 export default function Footer() {
   return (
