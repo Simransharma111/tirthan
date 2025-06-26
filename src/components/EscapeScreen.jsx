@@ -21,7 +21,7 @@ export default function EscapeScreen({ onEscape }) {
         {startEscape && (
           <video
             className="bg-video"
-            src="/videos/video.mp4"
+            src="/videos/bgg.mp4"
             autoPlay
             muted
             loop
