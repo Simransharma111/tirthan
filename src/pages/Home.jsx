@@ -14,11 +14,10 @@ import FloatingWhatsappButton from '../components/FloatingWhatsappButton';
 // import Contact from '../pages/Contact';
 
 export default function Home() {
-  const isPageRefresh =
-    performance.getEntriesByType('navigation')[0]?.type === 'reload';
-
   const [hasEscaped, setHasEscaped] = useState(() => {
-    return isPageRefresh ? false : true;
+    // Only show EscapeScreen on first-ever visit
+    const visited = localStorage.getItem('hasVisited');
+    return visited === 'true' ? true : false;
   });
 
   useEffect(() => {
@@ -29,6 +28,7 @@ export default function Home() {
 
   const handleEscape = () => {
     setHasEscaped(true);
+    localStorage.setItem('hasVisited', 'true');
   };
 
   return (
@@ -50,9 +50,9 @@ export default function Home() {
             <p className="text-gray-600">Discover the best travel packages tailored for you</p>
           </div>
           <Packages />
-
-          {/* <div id="about"> <About /> </div>
-          <div id="contact"> <Contact /> </div> */}
+{/* 
+          <div id="about"><About /></div>
+          <div id="contact"><Contact /></div> */}
 
           <Footer />
           <FloatingWhatsappButton />
