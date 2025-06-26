@@ -1,92 +1,75 @@
 .gallery-section {
-  padding: 4rem 1rem 6rem;
-  background: linear-gradient(to right, #b2dfdb, #134046);
-  color: white;
+  padding: 2rem 0;
   text-align: center;
-  overflow: hidden;
-  min-height: 100vh;
+  background-color: #f8f9fa;
 }
 
 .gallery-heading {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  color:#333; /* changed from #333 */
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #333;
 }
 
+/* ======= DESKTOP CAROUSEL ======= */
 .carousel-wrapper {
-  perspective: 1200px;
-  width: 100%;
-  height: 240px;
+  perspective: 1000px;
+  margin: auto;
+  max-width: 900px;
+  height: 400px;
   position: relative;
-  margin: 0 auto;
 }
 
 .carousel {
   width: 100%;
   height: 100%;
+  position: relative;
   transform-style: preserve-3d;
-  transition: transform 1s ease;
-  position: absolute;
-  top: 0;
-  left: 0;
+  transition: transform 1s;
 }
 
 .carousel-image {
   position: absolute;
-  width: 280px;
-  height: 180px;
-  left: 50%;
+  width: 300px;
+  height: 200px;
   top: 50%;
-  transform-style: preserve-3d;
-  transform-origin: center;
-  cursor: pointer;
-  transition: transform 0.5s ease;
+  left: 50%;
+  margin: -100px 0 0 -150px;
+  transition: transform 1s, opacity 0.8s;
+  border-radius: 12px;
   overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
 .carousel-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 14px;
-  transition: transform 0.3s ease;
 }
 
-.carousel-image img:hover {
-  transform: scale(1.04);
-}
-
-/* 🔥 Button container - Improved for all screens */
+/* ======= BUTTON STYLES ======= */
 .btn-container {
-  margin-top: 15rem;
+  margin-top: 1.5rem;
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
   gap: 1rem;
-  position: relative;
-  z-index: 5;
 }
 
 .btn {
-  margin: 2rem;
-  padding: 12px 28px;
-  font-size: 1.1rem;
-  background: rgba(12, 62, 52, 0.15);
+  background-color: #0077cc;
   color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 16px;
-  backdrop-filter: blur(10px);
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
 .btn:hover {
-  background: rgba(255, 255, 255, 0.25);
-  transform: scale(1.05);
+  background-color: #005fa3;
 }
 
+/* ======= MOBILE VERSION ======= */
 @media (max-width: 768px) {
   .carousel-wrapper,
   .carousel,
@@ -94,48 +77,56 @@
     display: none;
   }
 
+  .gallery-section {
+    padding: 1.5rem 0;
+  }
+
+  .gallery-heading {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
   .mobile-slider {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    padding: 0 1rem;
   }
 
-  .mobile-image-wrapper {
-    width: 90%;
-    max-width: 340px;
-    height: 220px;
-    border-radius: 10px;
+  .kenburns-container {
+    width: 100%;
+    max-width: 320px;
+    height: 200px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    margin-bottom: 1rem;
     position: relative;
-    transition: opacity 0.8s ease;
+    margin-bottom: 1rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   }
 
-  .mobile-image-wrapper img {
+  .kenburns-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    animation: kenburnsZoom 10s ease-in-out infinite alternate;
+    transform-origin: center;
   }
 
-  .fade-in {
-    animation: fadeIn 0.8s ease;
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.95); }
-    to   { opacity: 1; transform: scale(1); }
+  @keyframes kenburnsZoom {
+    0% {
+      transform: scale(1) translate(0, 0);
+    }
+    100% {
+      transform: scale(1.1) translate(-5px, -5px);
+    }
   }
 
   .btn-container {
-    display: flex;
-    justify-content: center;
+    gap: 0.75rem;
   }
 
   .btn {
     padding: 0.4rem 1rem;
-    margin: 0 8px;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
 }
