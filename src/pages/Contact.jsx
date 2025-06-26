@@ -1,4 +1,5 @@
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from 'react-helmet-async';
+
 import Navbar from "../components/Navbar";
 
 export default function Contact() {

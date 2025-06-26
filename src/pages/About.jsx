@@ -1,4 +1,5 @@
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from 'react-helmet-async';
+
 import Footer from "../components/Footer";
 import "../styles/about.css";
 

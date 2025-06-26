@@ -12,7 +12,7 @@ const anglePerImage = 360 / images.length;
 
 export default function Gallary() {
   const [angle, setAngle] = useState(0);
-  const [currentIndex, setCurrentIndex] = useState(0); // mobile
+  const [currentIndex, setCurrentIndex] = useState(0);
   const galleryRef = useRef(null);
   const scrollCooldown = useRef(false);
   const autoRotateRef = useRef(null);
@@ -42,7 +42,18 @@ export default function Gallary() {
     return () => clearInterval(autoRotateRef.current);
   }, [isMobile]);
 
-  // Scroll to rotate on desktop
+  // Auto-swipe for mobile
+  useEffect(() => {
+    if (isMobile) {
+      autoRotateRef.current = setInterval(() => {
+        setCurrentIndex((prev) => (prev + 1) % images.length);
+      }, 4000);
+    }
+
+    return () => clearInterval(autoRotateRef.current);
+  }, [isMobile]);
+
+  // Scroll rotation (desktop only)
   useEffect(() => {
     if (!galleryRef.current || isMobile) return;
 
@@ -72,6 +83,7 @@ export default function Gallary() {
     <div className="gallery-section" ref={galleryRef}>
       <h2 className="gallery-heading">Photo Gallery</h2>
 
+      {/* Desktop carousel */}
       {!isMobile && (
         <div className="carousel-wrapper">
           <div className="carousel" style={{ transform: `rotateY(${angle}deg)` }}>
@@ -93,6 +105,7 @@ export default function Gallary() {
         </div>
       )}
 
+      {/* Mobile slider with auto-swipe */}
       {isMobile && (
         <div className="mobile-slider">
           <div className="mobile-image-wrapper fade-in">
