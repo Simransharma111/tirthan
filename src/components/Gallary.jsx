@@ -15,7 +15,6 @@ export default function Gallary() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const galleryRef = useRef(null);
   const scrollCooldown = useRef(false);
-  const autoRotateRef = useRef(null);
 
   const isMobile = window.innerWidth <= 768;
 
@@ -31,31 +30,22 @@ export default function Gallary() {
     }
   };
 
-  // Auto-rotate for desktop
+  // Unified auto-rotate or auto-swipe
   useEffect(() => {
-    if (!isMobile) {
-      autoRotateRef.current = setInterval(() => {
-        setAngle((prev) => prev - anglePerImage);
-      }, 4000);
-    }
-
-    return () => clearInterval(autoRotateRef.current);
-  }, [isMobile]);
-
-  // Auto-swipe for mobile
-  useEffect(() => {
-    if (isMobile) {
-      autoRotateRef.current = setInterval(() => {
+    const interval = setInterval(() => {
+      if (isMobile) {
         setCurrentIndex((prev) => (prev + 1) % images.length);
-      }, 4000);
-    }
+      } else {
+        setAngle((prev) => prev - anglePerImage);
+      }
+    }, 4000);
 
-    return () => clearInterval(autoRotateRef.current);
+    return () => clearInterval(interval);
   }, [isMobile]);
 
-  // Scroll rotation (desktop only)
+  // Desktop scroll to rotate
   useEffect(() => {
-    if (!galleryRef.current || isMobile) return;
+    if (isMobile || !galleryRef.current) return;
 
     const handleScroll = (e) => {
       if (scrollCooldown.current || e.deltaY === 0) return;
@@ -67,8 +57,12 @@ export default function Gallary() {
       }, 500);
     };
 
-    galleryRef.current.addEventListener('wheel', handleScroll);
-    return () => galleryRef.current.removeEventListener('wheel', handleScroll);
+    const el = galleryRef.current;
+    el.addEventListener('wheel', handleScroll);
+
+    return () => {
+      el.removeEventListener('wheel', handleScroll);
+    };
   }, [isMobile]);
 
   const getAltText = (img) => {
@@ -98,6 +92,7 @@ export default function Gallary() {
               </div>
             ))}
           </div>
+
           <div className="btn-container">
             <button className="btn" onClick={() => rotate(1)}>Prev</button>
             <button className="btn" onClick={() => rotate(-1)}>Next</button>
@@ -114,13 +109,17 @@ export default function Gallary() {
           <div className="btn-container">
             <button
               className="btn"
-              onClick={() => setCurrentIndex((currentIndex - 1 + images.length) % images.length)}
+              onClick={() =>
+                setCurrentIndex((currentIndex - 1 + images.length) % images.length)
+              }
             >
               Prev
             </button>
             <button
               className="btn"
-              onClick={() => setCurrentIndex((currentIndex + 1) % images.length)}
+              onClick={() =>
+                setCurrentIndex((currentIndex + 1) % images.length)
+              }
             >
               Next
             </button>

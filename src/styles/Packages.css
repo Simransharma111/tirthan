@@ -82,3 +82,38 @@
 .package-button:hover {
   background: #1d4ed8;
 }
+.weather-alert {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  background-color: #fff8e1;
+  border: 1px solid #ffe0b2;
+  padding: 0.6rem 0;
+  color: #5d4037;
+  font-weight: 600;
+  font-size: 1rem;
+  position: relative;
+  margin-top: 2rem;
+}
+
+.weather-text {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scroll-left 15s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Responsive font size */
+@media (max-width: 768px) {
+  .weather-alert {
+    font-size: 0.9rem;
+  }
+}

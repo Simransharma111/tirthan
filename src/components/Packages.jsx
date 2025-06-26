@@ -80,6 +80,13 @@ export default function Packages() {
             </motion.div>
           ))}
         </div>
+<div className="weather-alert">
+  <div className="weather-text">
+    ⚠️ Please check the local weather before visiting Tirthan Valley — travel may be affected during bad weather.
+  </div>
+</div>
+
+
       </section>
     </>
   );
