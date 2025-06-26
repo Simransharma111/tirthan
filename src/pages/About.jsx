@@ -11,7 +11,7 @@ export default function About() {
           name="description"
           content="Learn more about TravelNow and the team behind it."
         />
-        <link rel="canonical" href="https://yourwebsite.com/about" />
+        <link rel="canonical" href="https://tirthan.netlify.app/about" />
       </Helmet>
 
       {/* Company Section */}

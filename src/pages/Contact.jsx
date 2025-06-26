@@ -16,7 +16,7 @@ export default function Contact() {
           name="keywords"
           content="contact travelnow, support, travel help, booking inquiry"
         />
-        <link rel="canonical" href="https://yourwebsite.com/contact" />
+        <link rel="canonical" href="https://tirthan.netlify.app/contact" />
       </Helmet>
 
       <div style={{ marginTop: "6rem" }}> {/* Adds space after Navbar */}
@@ -41,7 +41,7 @@ export default function Contact() {
             <input
               type="hidden"
               name="_next"
-              value="https://yourwebsite.com/thank-you"
+              value="https://tirthan.netlify.app/thank-you"
             />
             <input type="hidden" name="_captcha" value="false" />
 
